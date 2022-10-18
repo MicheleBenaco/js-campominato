@@ -61,7 +61,7 @@ function play(){
 
    while(listaBombe.length < BOMBE){
     getRandomIntInclusive(1,16);
-     listaBombe.add(getRandomIntInclusive);
+     listaBombe.push(getRandomIntInclusive);
    }
    console.log(listaBombe)
 
