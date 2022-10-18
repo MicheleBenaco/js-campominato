@@ -15,8 +15,11 @@ const btnPlay = document.getElementById('play');
 // funzione che fara partire il gioco 
 function play(){
     const fieldGame = document.getElementById('box-grglia');
+    const fine = document.getElementById('fine');
     fieldGame.innerHTML = '';
-
+    let  listaBombe = [];
+    const  NUM_BOMBE = 16;
+    console.log(listaBombe)
 
 //    livello di gioco  
     let numCell;
@@ -44,9 +47,18 @@ function play(){
         cella.style.height = `calc(100% / ${cellaPerSide})`;
         cella.innerHTML=`<span> ${num}</span>  `;
 
+
     // funzione che cambia il colore alla cella
     cella.addEventListener('click',function(){
-        this.classList.add('colorSquare')
+        if( listaBombe.includes(num) ){
+            this.classList.add('danger-bomb')
+            
+           
+        }else{
+            this.classList.add('colorSquare')
+            
+        }
+        
     })
 
         return cella;
@@ -55,17 +67,16 @@ function play(){
     // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.  
      // I numeri nella lista delle bombe non possono essere duplicati.
     
-   let  listaBombe = [];
-   const BOMBE = 16;
-   console.log(listaBombe)
+   
 
-   while(listaBombe.length < BOMBE){
-    getRandomIntInclusive(1,16);
-     listaBombe.push(getRandomIntInclusive);
+   while(listaBombe.length < NUM_BOMBE){
+    const randomBomb = getRandomIntInclusive(1, numCell);
+    if(!listaBombe.includes(randomBomb)){
+         listaBombe.push(randomBomb);
+    }
+       
    }
    console.log(listaBombe)
-
-
 
 
 // funzione che genera la griglia di gioco 
