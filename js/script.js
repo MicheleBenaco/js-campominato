@@ -50,10 +50,24 @@ function play(){
     })
 
         return cella;
-    
-
-        
     }
+
+    // Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.  
+     // I numeri nella lista delle bombe non possono essere duplicati.
+    
+   let  listaBombe = [];
+   const BOMBE = 16;
+   console.log(listaBombe)
+
+   while(listaBombe[getRandomIntInclusive].length < BOMBE){
+    getRandomIntInclusive(1,16);
+    listaBombe.add(getRandomIntInclusive);
+   }
+   console.log(listaBombe)
+
+
+
+
 // funzione che genera la griglia di gioco 
     function genereteGrid(){
         const grid = document.createElement('div');
@@ -81,6 +95,12 @@ function play(){
 
     }
 
+
+    function getRandomIntInclusive(min, max) {
+        min = Math.ceil(min);
+        max = Math.floor(max);
+        return Math.floor(Math.random() * (max - min + 1) + min); // The maximum is inclusive and the minimum is inclusive
+      }
 
 
 // avvio il gioco al click del bottone

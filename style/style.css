@@ -49,6 +49,9 @@ main{
     border: 1px solid rgb(36, 34, 34);
    
 }
+.danger-bomb{
+    color: red;
+}
 
 
 
