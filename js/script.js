@@ -52,10 +52,13 @@ function play(){
     cella.addEventListener('click',function(){
         if( listaBombe.includes(num) ){
             this.classList.add('danger-bomb')
+            fieldGame.innerHTML = ' HAI PERSO RIPROVA ↥';
             
            
         }else{
             this.classList.add('colorSquare')
+        
+
             
         }
         
